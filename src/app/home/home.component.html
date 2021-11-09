@@ -1,0 +1,26 @@
+<div class="container text-center">
+    <form  class="form-inline pt-5 m-auto">
+        <input #query (keyup)="filter(query.value)"  name="search" class="form-control mb-3 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    
+    
+    <div class="row">
+        <div class="ImGifContainer mb-5 m-auto">
+           <div class="d-flex w-25 align-items-center">
+            <h4>output:</h4>
+            
+           </div> 
+        <div class="row">
+            <div *ngFor='let item of searchItems' class="col-md-4">
+               
+               <img [src]="item.images.downsized.url" alt="item.title">
+               <p>{{item.title}}</p>
+            </div>
+        </div>
+    </div>
+        <div *ngFor="let item of data" class="font col-md position-relative">
+            <img [src]="item.images.downsized.url">
+            <p>{{item.title}}</p>
+        </div>
+   </div> 
+</div>
